@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
+from flask_cors import CORS
 
 db = SQLAlchemy()
 BASE = os.path.abspath(os.path.dirname(__file__))
@@ -13,6 +14,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'password'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_DATABASE_URI'] = URL
+    cors = CORS(app, resources={r'/*':{"origins":"*"}})
     db.init_app(app)
 
     from app.views.home import home

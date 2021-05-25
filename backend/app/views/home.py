@@ -3,7 +3,6 @@ from flask import Blueprint, jsonify, request
 from flask.helpers import make_response
 from app.models.anime import Anime
 from app import db
-import json
 
 home = Blueprint('home', __name__)
 

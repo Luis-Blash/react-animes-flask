@@ -1,30 +1,36 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { postAnime } from '../helpers/postAnime';
 import { useForm } from '../hooks/useForm'
 
 
 export const FormAnime = () => {
 
+    const [mensaje, setMensaje] = useState('')
+
     const [formState, handleInputChange] = useForm({
         anime: '',
-        f_publicacion: '',
-        f_termino: '',
+        fecha_publicacion: '',
+        fecha_termino: '',
         temporada: 0,
         capitulos: 0,
         estado: true,
-        imagen: ''
+        url_img: ''
     });
 
-    const { anime, f_publicacion,
-            f_termino, temporada,
-            capitulos,estado, imagen } = formState;
+    const { anime, fecha_publicacion,
+            fecha_termino, temporada,
+            capitulos,estado, url_img } = formState;
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        postAnime(formState).then(({mensaje}) => {
+            setMensaje(mensaje);
+        });
     }
-
     return (
         <>
             <h1>Agregar nuevo anime</h1>
+            <p>{mensaje}</p>
             <form id="form" onSubmit={handleSubmit}>
                 <div>
                     <label>Nombre:</label>
@@ -40,9 +46,9 @@ export const FormAnime = () => {
                     <label>Fecha de publicacion:</label>
                     <input
                         type="text"
-                        name="f_publicacion"
+                        name="fecha_publicacion"
                         placeholder="DD/MM/YYYY"
-                        value={f_publicacion}
+                        value={fecha_publicacion}
                         onChange={handleInputChange}
                     />
                 </div>
@@ -51,9 +57,9 @@ export const FormAnime = () => {
                     <label>Fecha de termino:</label>
                     <input
                         type="text"
-                        name="f_termino"
+                        name="fecha_termino"
                         placeholder="DD/MM/YYYY"
-                        value={f_termino}
+                        value={fecha_termino}
                         onChange={handleInputChange}
                     />
                 </div>
@@ -90,9 +96,9 @@ export const FormAnime = () => {
                     <label>Imagen:</label>
                     <input
                         type="text"
-                        name="imagen"
-                        placeholder="url de la imagen"
-                        value={imagen}
+                        name="url_img"
+                        placeholder="url de la url_img"
+                        value={url_img}
                         onChange={handleInputChange}
                     />
                 </div>

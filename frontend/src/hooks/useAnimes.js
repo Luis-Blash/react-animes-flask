@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import { getAnimes } from '../helpers/getAnimes';
 
 export const useAnimes = (nombre='') => {
+
     const [state, setstate] = useState({
         data: [],
         loading: true
@@ -14,7 +15,7 @@ export const useAnimes = (nombre='') => {
                     data: anime,
                     loading: false
                 })
-            }, 2000);
+            }, 1000);
         })
     }, [nombre])
 

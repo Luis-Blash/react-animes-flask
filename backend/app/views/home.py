@@ -30,19 +30,6 @@ def anime_all():
         return respuesta
 
 
-@home.route('/anime/<anime>', methods=['GET'])
-def anime_id(anime):
-    '''Metodo GET uno'''
-    anime = anime.lower()
-    try:
-        datos = Anime().anime_one(anime)
-        respuesta = make_response(datos, 200)
-        respuesta.headers['Content-Type'] = 'application/json'
-        return respuesta
-    except (AttributeError, TypeError):
-        return jsonify({'mensaje': 'No existe'}), 404
-
-
 @home.route('/anime/<id>', methods=['DELETE'])
 def anime_delete(id: int):
     '''Metodo DELETE'''

@@ -2,9 +2,8 @@ import React from 'react'
 import { useAnimes } from '../hooks/useAnimes'
 
 export const Anime = () => {
-    const {data, loading} = useAnimes();
-    console.log(data, loading);
-    
+    const {data, loading} = useAnimes("");
+
     return (
         <div>
             <h1>Bienvenido a Anime</h1>
@@ -19,6 +18,7 @@ export const Anime = () => {
                         <p>{e.temporada}</p>
                         <p>{e.capitulos}</p>
                         {e.estado ? <p>Activo</p> : <p>Desactivado</p>}
+                        <button >Eliminar</button>
                     </div>
                 ))}
             </div>

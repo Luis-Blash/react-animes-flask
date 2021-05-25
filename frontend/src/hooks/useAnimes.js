@@ -1,14 +1,14 @@
 import {useState, useEffect} from 'react';
 import { getAnimes } from '../helpers/getAnimes';
 
-export const useAnimes = () => {
+export const useAnimes = (nombre='') => {
     const [state, setstate] = useState({
         data: [],
         loading: true
     });
 
     useEffect(() => {
-        getAnimes().then(anime => {
+        getAnimes(nombre).then(anime => {
             setTimeout(() => {
                 setstate({
                     data: anime,
@@ -16,7 +16,7 @@ export const useAnimes = () => {
                 })
             }, 2000);
         })
-    }, [])
+    }, [nombre])
 
     return state;
 }

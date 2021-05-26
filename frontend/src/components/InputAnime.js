@@ -1,11 +1,14 @@
 import React, {useState} from 'react'
 
-export const InputAnime = ({setNombreAnimes}) => {
+export const InputAnime = ({controlador ,setControlador}) => {
     const [inputBusqueda, setInputBusqueda] = useState('');
 
     const handleInputChange = ({target})=>{
         setInputBusqueda(target.value);
-        setNombreAnimes(inputBusqueda)
+        setControlador({
+            ...controlador,
+            nombreAnimes: inputBusqueda
+        })
     }
     return (
         <>

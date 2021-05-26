@@ -4,14 +4,16 @@ import { Anime } from '../components/Anime'
 import { InputAnime } from '../components/InputAnime';
 
 export const Home = () => {
-    const [nombreAnimes, setNombreAnimes] = useState('')
-
+    const [controlador, setControlador] = useState({
+        nombreAnimes: '',
+        cambio: false
+    })
     return (
         <>
             <h1>Animes flask</h1>
             <FormAnime />
-            <InputAnime setNombreAnimes={setNombreAnimes} nombreAnimes={nombreAnimes} />
-            <Anime nombreAnimes={nombreAnimes} />
+            <InputAnime setControlador={setControlador} controlador={controlador} />
+            <Anime controlador={controlador} setControlador={setControlador}/>
         </>
     )
 }

@@ -1,12 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useAnimes } from '../hooks/useAnimes'
 import { CardAnimes } from './CardAnimes';
 
-export const Anime = ({nombreAnimes}) => {
-    const [cambioAnime, setCambioAnime] = useState(false)
-    const {data, loading} = useAnimes(nombreAnimes, cambioAnime);
-    console.log(cambioAnime);
-
+export const Anime = ({controlador, setControlador}) => {
+    const {nombreAnimes, cambio} = controlador;
+    const {data, loading} = useAnimes(nombreAnimes, cambio);
     return (
         <div>
             <h1>Bienvenido a Anime</h1>
@@ -16,7 +14,8 @@ export const Anime = ({nombreAnimes}) => {
                     <CardAnimes 
                         key={e.id}
                         anime={e}
-                        setCambioAnime={setCambioAnime}
+                        controlador={controlador}
+                        setControlador={setControlador}
                     />
                 )}
             </div>

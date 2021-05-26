@@ -1,13 +1,19 @@
 import React from 'react'
 
-export const CardAnimes = ({ anime , setCambioAnime}) => {
+export const CardAnimes = ({ anime , controlador,setControlador}) => {
     const eliminarAnime = async (id) => {
         const url = `http://localhost:5000/anime/${id}`;
         const resp = await fetch(url, { method: 'DELETE' });
-        console.log(resp);
-        setCambioAnime(true);
+        console.log(resp)
+        setControlador({
+            ...controlador,
+            cambio: true
+        })
         setTimeout(() => {
-            setCambioAnime(false);
+            setControlador({
+                ...controlador,
+                cambio: false
+            })
         }, 1000);
     }
     return (

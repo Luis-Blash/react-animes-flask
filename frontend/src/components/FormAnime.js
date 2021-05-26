@@ -3,7 +3,7 @@ import { postAnime } from '../helpers/postAnime';
 import { useForm } from '../hooks/useForm'
 
 
-export const FormAnime = () => {
+export const FormAnime = ({controlador, setControlador}) => {
 
     const [mensaje, setMensaje] = useState('')
 
@@ -26,6 +26,16 @@ export const FormAnime = () => {
         postAnime(formState).then(({mensaje}) => {
             setMensaje(mensaje);
         });
+        setControlador({
+            ...controlador,
+            cambio:true
+        })
+        setTimeout(() => {
+            setControlador({
+                ...controlador,
+                cambio: false
+            })
+        }, 1000);
     }
     return (
         <>

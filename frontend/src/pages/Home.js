@@ -8,10 +8,11 @@ export const Home = () => {
         nombreAnimes: '',
         cambio: false
     })
+    console.log(controlador.cambio)
     return (
         <>
             <h1>Animes flask</h1>
-            <FormAnime />
+            <FormAnime setControlador={setControlador} controlador={controlador}/>
             <InputAnime setControlador={setControlador} controlador={controlador} />
             <Anime controlador={controlador} setControlador={setControlador}/>
         </>

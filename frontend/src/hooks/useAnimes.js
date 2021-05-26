@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import { getAnimes } from '../helpers/getAnimes';
 
-export const useAnimes = (nombre='') => {
+export const useAnimes = (nombre='', cambio) => {
 
     const [state, setstate] = useState({
         data: [],
@@ -17,7 +17,7 @@ export const useAnimes = (nombre='') => {
                 })
             }, 1000);
         })
-    }, [nombre])
+    }, [nombre, cambio])
 
     return state;
 }

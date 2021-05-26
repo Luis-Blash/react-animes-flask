@@ -1,10 +1,14 @@
 import React from 'react'
 
-export const CardAnimes = ({ anime,useAnime}) => {
-    console.log(useAnime)
+export const CardAnimes = ({ anime , setCambioAnime}) => {
     const eliminarAnime = async (id) => {
-        // const url = `http://localhost:5000/anime/${id}`;
-        // const resp = await fetch(url, { method: 'DELETE' });
+        const url = `http://localhost:5000/anime/${id}`;
+        const resp = await fetch(url, { method: 'DELETE' });
+        console.log(resp);
+        setCambioAnime(true);
+        setTimeout(() => {
+            setCambioAnime(false);
+        }, 1000);
     }
     return (
         <>

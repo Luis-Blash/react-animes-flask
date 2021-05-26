@@ -1,15 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { FormAnime } from '../components/FormAnime';
-// import { Anime } from '../components/Anime'
+import { Anime } from '../components/Anime'
+import { InputAnime } from '../components/InputAnime';
 
 export const Home = () => {
-    // const [nombreAnime, setNombreAnime] = useState('');
+    const [nombreAnimes, setNombreAnimes] = useState('')
 
     return (
-        <div>
+        <>
             <h1>Animes flask</h1>
             <FormAnime />
-            {/* <Anime /> */}
-        </div>
+            <InputAnime setNombreAnimes={setNombreAnimes} nombreAnimes={nombreAnimes} />
+            <Anime nombreAnimes={nombreAnimes} />
+        </>
     )
 }

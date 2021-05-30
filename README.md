@@ -1,11 +1,12 @@
 # React anime flask 🖥
 > Una concección sencilla a traves del backend usando flask y una conexión a React
+
 Las rutas ue existen en flask son post, delete y get
-![alt Inicio](https://github.com/Luis-Blash/react-animes-flask/blob/main/git-img/inicio.png "Inicio")
+![alt Inicio](https://raw.githubusercontent.com/Luis-Blash/react-animes-flask/main/images/inicio.png "Inicio")
 Existe una ruta de busqueda en busqueda
-![alt busqueda](https://github.com/Luis-Blash/react-animes-flask/blob/main/git-img/busqueda.png "busqueda")
+![alt busqueda](https://raw.githubusercontent.com/Luis-Blash/react-animes-flask/main/images/busqueda.png "busqueda")
 Puedes Agregar mas animes usando el metodo post
-![alt post](https://github.com/Luis-Blash/react-animes-flask/blob/main/git-img/post.png "post")
+![alt post](https://raw.githubusercontent.com/Luis-Blash/react-animes-flask/main/images/post.png "post")
 
 ## Backend Flask
 Primero tienes que instalar las dependecias.

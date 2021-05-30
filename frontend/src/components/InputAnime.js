@@ -13,11 +13,12 @@ export const InputAnime = ({controlador ,setControlador}) => {
     return (
         <>
             <input 
-            type="text" 
-            placeholder="Anime"
+            className="search"
             name="nombre"
-            value={inputBusqueda}
+            placeholder="Anime"
+            type="text" 
             onChange={handleInputChange}
+            value={inputBusqueda}
             />
         </>
     )

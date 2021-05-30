@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primerio: #1e379b;
+    --secundario: #5d78e4;
+    --complementario: #FFD36B;
+    --transparente: #ffffff00;
+    --letras: #fff;
+    --negro: #000;
+}
+
+body {
+    background-color: var(--primerio);
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1,
+p,
+label,
+span,
+h2 {
+    color: var(--letras);
+}
+
+input[type=text],
+input[type=number] {
+    background-color: var(--transparente);
+    border: none;
+    border-bottom: 2px solid var(--secundario);
+    color: var(--letras);
+    font-size: .9rem;
+    margin-bottom: 5px;
+    width: 95%;
+}
+
+input::placeholder {
+    color: var(--letras);
+}
+
+input:focus {
+    outline: none;
+}
+
+
+/** Home **/
+
+.bar {
+    background-color: var(--secundario);
+    border-radius: 20px;
+    height: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+
+/** Boton hamburger **/
+
+.fix {
+    position: fixed;
+    right: 0;
+}
+
+.menu-div {
+    height: 463px;
+    float: right;
+    overflow: hidden;
+    position: relative;
+    width: 430px;
+}
+
+.hamburger {
+    background-color: var(--complementario);
+    border-radius: 5px;
+    cursor: pointer;
+    height: 50px;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    width: 50px;
+}
+
+.hamburger > p{
+    border: solid var(--secundario);
+    border-radius: 10px;
+    height: 0;
+    margin-top: 23px;
+    margin-left: 20%;
+    width: 50%;
+    transition: all ease 1s;
+}
+
+.open > p{
+    height: 15px;
+    margin-top: 14px;
+}
+
+.margin-left {
+    margin-left: 0 !important;
+}
+
+
+/** FORM **/
+
+.form {
+    background-color: var(--complementario);
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    bottom: 0px;
+    margin-left: 650px;
+    overflow: hidden;
+    position: absolute;
+    padding: 15px;
+    transition: all 1s ease-in-out;
+    width: 93%;
+}
+
+.form h1 {
+    color: var(--negro);
+    font-size: 1.7em;
+}
+
+form {
+    width: 100%;
+}
+
+form>input {
+    color: var(--negro) !important;
+    padding-left: 10px;
+}
+
+form>input::placeholder {
+    color: var(--negro);
+}
+
+label {
+    color: var(--negro);
+    display: block;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.status label {
+    display: contents;
+}
+
+.status input {
+    margin-left: 9px;
+}
+
+form>button {
+    background-color: var(--secundario);
+    color: var(--letras);
+    border-radius: 25px;
+    display: block;
+    margin-top: 15px;
+    transition: all ease 1s;
+    width: 100%;
+}
+
+form>button:hover {
+    background-color: #7f90d8;
+}
+
+
+/** search **/
+
+.search {
+    background-image: url('../assets/search.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    height: 40px;
+    font-size: 1.8em;
+    padding-left: 40px;
+    width: 100%;
+}
+
+/** Grid Animes**/
+.anime h1{
+    margin-bottom: 35px;
+}
+
+.grid-animes{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+
+.card-anime{
+    background-color: var(--secundario);
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    height: 170px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.img-anime{
+    border-radius: 10px;
+    height: 10.5rem;
+    overflow: hidden;
+}
+
+.img-anime img{
+    width: 100%;
+    height: 100%;
+}
+
+.datos-anime{
+    text-align: center;
+}
+
+.fechas-anime > span{
+    color: #ddd;
+}
+
+.info-anime{
+    display: grid;
+    width: 50%;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 10px auto;
+}
+
+.info-anime > div{
+    height: 60px;
+    overflow: hidden;
+}
+.info-anime > div > div{
+    background-color: #fffffff5;
+    border-radius: 5px;
+    left: 20%;
+    top: 35%;
+    width: 30px;
+}
+
+.info-anime > div > div > p{
+    color: var(--negro);
+}
+
+.info-anime > div > img{
+    width: 100%;
+}
+
+.btn-eliminar{
+    background-color: var(--complementario);
+    border-radius: 5px;
+    width: 100%;
+}

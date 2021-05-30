@@ -6,10 +6,10 @@ export const Anime = ({controlador, setControlador}) => {
     const {nombreAnimes, cambio} = controlador;
     const {data, loading} = useAnimes(nombreAnimes, cambio);
     return (
-        <div>
+        <div className="anime">
             <h1>Bienvenido a Anime</h1>
             {loading && <p>Cargando</p>}
-            <div>
+            <div className="grid-animes">
                 {data.map((e)=>
                     <CardAnimes 
                         key={e.id}
